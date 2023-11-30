@@ -60,17 +60,17 @@ void coordinatesConvertToCartesian() {
 
 //Task 7
 void findRoots() {
-    std::cout << "7.Test equation: 2x^2+2x+2=0, enter a=2,b=2,c=2, answer 'No roots' " << std::endl;
+    std::cout << "7.Нахождение корней, тестовый ввод 2x^2+2x+2=0 где a=2,b=2,c=2, ответ 'Корней нет' " << std::endl;
 
     double a = 0.0;
     double b = 0.0;
     double c = 0.0;
-    std::cout << "Quadratic root: ax^2+bx+c=0" << std::endl;
-    std::cout << "Enter a" << std::endl;
+    std::cout << "Квадратное уравнение имеет вид: ax^2+bx+c=0" << std::endl;
+    std::cout << "Введите a" << std::endl;
     std::cin >> a;
-    std::cout << "Enter b" << std::endl;
+    std::cout << "Введите b" << std::endl;
     std::cin >> b;
-    std::cout << "Enter c" << std::endl;
+    std::cout << "Введите c" << std::endl;
     std::cin >> c;
 
     // Кейс полного
@@ -82,11 +82,11 @@ void findRoots() {
         else if (discriminant == 0)
             std::cout << "X1,X2 = " << -b / (2 * a) << std::endl;
         else
-            std::cout << "The equation has no roots" << std::endl;
+            std::cout << "Корней нет" << std::endl;
     }
     else if (a == 0) {
         if (b == 0 || c == 0)
-            std::cout << "Wrong inpute" << std::endl;
+            std::cout << "Некорректный ввод" << std::endl;
         else
             std::cout << "X= " << -c / b << std::endl;
     }
@@ -96,15 +96,15 @@ void findRoots() {
         else if (c < 0)
             std::cout << "X= " << pow(-c / a, 0.5) << std::endl;
         else
-            std::cout << "No roots " << std::endl;
+            std::cout << "Корней нет " << std::endl;
     }
     else if (c == 0) {
         if (a == 0 || b == 0)
-            std::cout << "Wrong inpute" << std::endl;
+            std::cout << "Некорректный ввод" << std::endl;
         else std::cout << "X1 = 0, X2 = " << -b / a << std::endl;
     }
     else
-        std::cout << "Something wrong" << std::endl;
+        std::cout << "Что-то не так" << std::endl;
 }
 //Task 8
 double findSideMedian(double main_side, double side2, double side3) {
@@ -112,20 +112,21 @@ double findSideMedian(double main_side, double side2, double side3) {
 }
 
 bool checkTriangle(double a, double b, double c) {
-    if (a > b + c || b > a + c || c > b + c)
-        std::cout << "Can't create triangle from medians." << std::endl;
-    return false;
+    if (a > b + c || b > a + c || c > b + c) {
+        std::cout << "Невозможно создать треугольник" << std::endl;
+        return false;
+    }
     return true;
 }
 
 void findMedians() {
 
-    std::cout << "8.Test triangle: 3.3.3, enter a=3,b=3,c=3. Answer is 2.25 (x3)" << std::endl;
+    std::cout << "8.Нахождение медиан треугольника из медиан изначального треугольника: Тестовый ввод a=3,b=3,c=3. Ответ 2.25 (3 раза)" << std::endl;
     double a = 0.0;
     double b = 0.0;
     double c = 0.0;
 
-    std::cout << "Enter sides a,b and c:" << std::endl;
+    std::cout << "Введите стороны a,b и c:" << std::endl;
     std::cin >> a >> b >> c;
     if (checkTriangle(a, b, c)) {
         double ma = findSideMedian(a, b, c);
@@ -144,31 +145,31 @@ void findMedians() {
 
 //Task 9
 void calcMinutesAndHours() {
-    std::cout << "9. Test k-second = 850, answer is 14 and 0" << std::endl;
+    std::cout << "9. Расчет перевод секунд в целые минуты или целые часы, пример ввода k = 850, ответ 14 и 0" << std::endl;
     int k = 0;
-    std::cout << "Enter k second: " << std::endl;
+    std::cout << "Ввведите целочисленную секунду: " << std::endl;
     std::cin >> k;
 
     if (k >= 0)
-        std::cout << "Minutes: " << k / 60 << "or Hours: " << k / 3600 << std::endl;
+        std::cout << "Целых минут: " << k / 60 << " или целых часов: " << k / 3600 << std::endl;
     else
-        std::cout << "Second must be above zero" << std::endl;
+        std::cout << "Секунда должна быть больше 0" << std::endl;
 
 }
 
 //Task 10
 void isTriangleIsosceles() {
-    std::cout << "10. Triangle a=5,b=5,c=2, answer is yes" << std::endl;
+    std::cout << "10. Проверка треугольника на равнобедренность, пример ввода a=5,b=5,c=2, ответ да" << std::endl;
     double a = 0.0;
     double b = 0.0;
     double c = 0.0;
-    std::cout << "Enter sides a,b and c:" << std::endl;
+    std::cout << "Введите стороны a,b и c:" << std::endl;
     std::cin >> a >> b >> c;
 
     if (a == b || b == c || a == c)
-        std::cout << "Triangle is isosceles" << std::endl;
+        std::cout << "Треугольник равнобедренный" << std::endl;
     else
-        std::cout << "Triangle is NOT isosceles" << std::endl;
+        std::cout << "Треугольник не равнобедренный" << std::endl;
 }
 
 //Task 14
@@ -237,6 +238,37 @@ void isHappyNumber() {
 
 }
 
+
+
+//Task 17.
+void getPennyString() {
+    std::cout << "17. Склонение копейки, пример, 11 - Копеек " << std::endl;
+    int penny = 0;
+    std::cout << "Введите число для копейки: " << std::endl;
+    std::cin >> penny;
+
+    if (penny <= 10) {
+        if (penny == 1)
+            std::cout << "Копейка" << std::endl;
+        else if (penny > 1 && penny <= 4)
+            std::cout << "Копейки" << std::endl;
+        else
+            std::cout << "Копеек" << std::endl;
+    }
+    else if (penny >= 11 && penny <= 20) {
+        std::cout << "Копеек" << std::endl;
+    }
+    else {
+        if (penny % 10 == 1)
+            std::cout << "Копейка" << std::endl;
+        else if (penny % 10 > 1 && penny % 10 <= 4)
+            std::cout << "Копейки" << std::endl;
+        else
+            std::cout << "Копеек" << std::endl;
+    }
+}
+
+
 //Task 18
 bool isPalindrome(int number) {
     int reverseNumber = 0;
@@ -268,6 +300,74 @@ void findPalindrome() {
 
 }
 
+//Task 19.
+void numberCheck() {
+    std::cout << "19. Операции с цифрами числа. Пример ввода 322, 13; ответ 'нет, да' " << std::endl;
+
+    int number = 0;
+    int dublicate = 0;
+    std::cout << "Введите трехзначное число: " << std::endl;
+    std::cin >> number;
+    if (number >= 999 || number < 100) {
+        std::cout << "Ошибка, некорректное число: " << std::endl;
+        return;
+    }
+    int b = 0;
+    std::cout << "Введите число b: " << std::endl;
+    std::cin >> b;
+
+    //19.1
+    dublicate = number;
+    int Product = 1;
+    for (int i = 100; i >= 1; i = i / 10)
+    {
+        int digit = (dublicate / i) % 10;
+        Product *= digit;
+    }
+
+    if (Product > b)
+        std::cout << Product << " (Произведение) > b==" << b << ", да" << std::endl;
+    else
+        std::cout << Product << " (Произведение) <= b==" << b << ", нет" << std::endl;
+
+    //19.2
+    dublicate = number;
+    int sum = 0;
+    for (int i = 100; i >= 1; i = i / 10)
+    {
+        int digit = (dublicate / i) % 10;
+        sum += digit;
+    }
+
+    if (sum % 7 == 0)
+        std::cout << "Цифры кратны 7, да" << std::endl;
+    else
+        std::cout << "Цифры не кратны 7, нет" << std::endl;
+
+
+}
+
+//Task 20.
+void rektangelCheck() {
+    std::cout << "20. Проверка на возможность вписать прямоугольник. Тестовый ввод a=11,b=20,c=5,d=10; Ответ для него 'нет' " << std::endl;
+
+    double a = 0.0;
+    double b = 0.0;
+    double c = 0.0;
+    double d = 0.0;
+    std::cout << "Введите стороны a,b (вписываемого прямоугольника):" << std::endl;
+    std::cin >> a >> b;
+    std::cout << "Введите стороны c,d (второго прямоугольника):" << std::endl;
+    std::cin >> c >> d;
+
+    if (((a < c) && (b < d)) || ((a < d) && (b < c)))
+        std::cout << "Можно вписать, да" << std::endl;
+    else
+        std::cout << "Нельзя вписать, нет" << std::endl;
+
+
+}
+
 //Task 21
 void printTypeSizes() {
     std::cout << "Размеры основных типов данных в байтах:" << std::endl;
@@ -281,100 +381,6 @@ void printTypeSizes() {
     std::cout << "Тип char: " << sizeof(char) << " байт" << std::endl;
     std::cout << "Тип bool: " << sizeof(bool) << " байт" << std::endl;
     //Размер типа char обычно составляет 1 байт и используется для представления одного символа. Размер типа bool также обычно составляет 1 байт и используется для представления логических значений true и false.
-}
-
-//Task 17.
-void getPennyString() {
-    std::cout << "17. пример, 11 - Копеек " << std::endl;
-    int penny = 0;
-    std::cout << "Enter penny: " << std::endl;
-    std::cin >> penny;
-
-    if (penny <= 10) {
-        if (penny == 1)
-            std::cout << "Копейка" << std::endl;
-        else if (penny > 1 && penny <= 4)
-            std::cout << "Копейки" << std::endl;
-        else
-            std::cout << "Копеек" << std::endl;
-    }
-    else if (penny >= 11 && penny <= 20) {
-        std::cout << "Копеек" << std::endl;
-    }
-    else {
-        if (penny % 10 == 1)
-            std::cout << "Копейка" << std::endl;
-        else if (penny % 10 > 1 && penny % 10 <= 4)
-            std::cout << "Копейки" << std::endl;
-        else
-            std::cout << "Копеек" << std::endl;
-    }
-}
-
-//Task 19.
-void numberCheck() {
-    std::cout << "19. numbers  322, 13; answer is 'no,yes' " << std::endl;
-
-    int number = 0;
-    int dublicate = 0;
-    std::cout << "Enter number: " << std::endl;
-    std::cin >> number;
-    if (number >= 999 || number < 100) {
-        std::cout << "Error, number is not correct: " << std::endl;
-        return;
-    }
-    int b = 0;
-    std::cout << "Enter number b: " << std::endl;
-    std::cin >> b;
-
-    //19.1
-    dublicate = number;
-    int Product = 1;
-    for (int i = 100; i >= 1; i = i / 10)
-    {
-        int digit = (dublicate / i) % 10;
-        Product *= digit;
-    }
-
-    if (Product > b)
-        std::cout << Product << " (Product) > b==" << b << ", yes" << std::endl;
-    else
-        std::cout << Product << " (Product) <= b==" << b << ", no" << std::endl;
-
-    //19.2
-    dublicate = number;
-    int sum = 0;
-    for (int i = 100; i >= 1; i = i / 10)
-    {
-        int digit = (dublicate / i) % 10;
-        sum += digit;
-    }
-
-    if (sum % 7 == 0)
-        std::cout << "digits sum is multipel to 7, yes" << std::endl;
-    else
-        std::cout << "digits sum is not multipel to 7, no" << std::endl;
-
-
-}
-
-//Task 20.
-void rektangelCheck() {
-    std::cout << "20. a=11,b=20,c=5,d=10; answer is yes " << std::endl;
-
-    double a = 0.0;
-    double b = 0.0;
-    double c = 0.0;
-    double d = 0.0;
-    std::cout << "Enter sides a,b,c,d:" << std::endl;
-    std::cin >> a >> b >> c >> d;
-
-    if (((a < c) && (b < d)) || ((a < d) && (b < c)))
-        std::cout << "Yes" << std::endl;
-    else
-        std::cout << "No" << std::endl;
-
-
 }
 
 int main()
