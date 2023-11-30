@@ -243,7 +243,38 @@ void gettingWeightRecommendations() {
 }
 
 //Task 13
-//Надо доделать задачу
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    // Установка генератора случайных чисел
+    std::srand(static_cast<unsigned int>
+        (std::time(nullptr)));
+
+    // Генерация двух случайных чисел в диапазоне от 1 до 9
+    int num1 = std::rand() % 9 + 1;
+    int num2 = std::rand() % 9 + 1;
+
+    // Вычисление произведения этих чисел
+    int result = num1 * num2;
+
+    // Вывод задания на экран
+    std::cout << "Умножьте " << num1 << " на " << num2 << ": ";
+
+    // Чтение ответа пользователя
+    int userAnswer;
+    std::cin >> userAnswer;
+
+    // Проверка ответа
+    if (userAnswer == result) {
+        std::cout << "Правильно! Ответ " << result << std::endl;
+    } else {
+        std::cout << "Неправильно. Правильный ответ: " << result << std::endl;
+    }
+
+    return 0;
+}
 
 //Task 14
 void getNegotiationCost() {
