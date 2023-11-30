@@ -247,7 +247,7 @@ void gettingWeightRecommendations() {
 #include <cstdlib>
 #include <ctime>
 
-int main() {
+void gettingRandomMultiplication() {
     // Установка генератора случайных чисел
     std::srand(static_cast<unsigned int>
         (std::time(nullptr)));
@@ -546,7 +546,7 @@ int main()
     isTriangleIsosceles(); //10 
     gettingPurchasePrice(); //11
     gettingWeightRecommendations(); //12
-    //где 13 задача?
+    gettingRandomMultiplication(); //13
     getNegotiationCost(); //14
     gettingMonthAndSeason(); //15
     isHappyNumber(); // 16
