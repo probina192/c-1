@@ -1,6 +1,48 @@
 #include <iostream>
 #include <cmath>
 
+//Task1
+void gettingTrapezoidArea() {
+    int b1, b2, h;
+    std::cout << "Enter 2 bases and height: " << std::endl;
+    std::cin >> b1 >> b2 >> h;
+    std::cout << "square = " << ((b1 + b2) / 2 * h);
+    std::cout << std::endl;
+}
+
+//Task 2
+void gettingCircumferenceAndAreaOfCircle() {
+    int r;
+    double p = 3.14;
+    std::cout << "Enter the radius: " << std::endl;
+    std::cin >> r;
+    std::cout << "Circle length = " << (2 * p * r) << ", " << "Circumference square = " << (p * r * r);
+    std::cout << std::endl;
+}
+
+//Task 3
+void gettingAreaAndHypotenuseOfTriangle() {
+    int a, b;
+    double c;
+    std::cout << "Enter the lengths of the cathets: " << std::endl;
+    std::cin >> a >> b;
+    std::cout << "The area of the triangle = " << a * b / 2 << ", " << "Hypotenuse = " << sqrt(pow(a, 2) + pow(b, 2));
+    std::cout << std::endl;
+}
+
+//Task 4
+void gettingSumOfDigits() {
+    int chislo, summa;
+    std::cout << "Enter the number: " << std::endl;
+    std::cin >> chislo;
+    int number1 = chislo / 1000;
+    int number2 = chislo % 1000 / 100;
+    int number3 = chislo % 100 / 10;
+    int number4 = chislo % 10;
+    summa = number1 + number2 + number3 + number4;
+    std::cout << "Sum of digits = " << summa;
+    std::cout << std::endl;
+}
 
 //Task 5
 struct PolarCoordinates {
@@ -32,7 +74,6 @@ void coordinatesConvertToPolar() {
     std::cout << "Полярные координаты: ";
     std::cout << "Радиус: " << polar.r << std::endl;
     std::cout << "Угол: " << polar.theta << " радиан" << std::endl;
-
 }
 
 //Task 6 inludes structures from task 5
@@ -55,7 +96,6 @@ void coordinatesConvertToCartesian() {
     std::cout << "Декартовы координаты: ";
     std::cout << "X: " << cartesian.x << std::endl;
     std::cout << "Y: " << cartesian.y << std::endl;
-
 }
 
 //Task 7
@@ -106,6 +146,7 @@ void findRoots() {
     else
         std::cout << "Что-то не так" << std::endl;
 }
+
 //Task 8
 double findSideMedian(double main_side, double side2, double side3) {
     return 0.5 * pow(2 * pow(side2, 2) + 2 * pow(side3, 2) - pow(main_side, 2), 0.5);
@@ -139,7 +180,6 @@ void findMedians() {
             double mc2 = findSideMedian(mc, mb, ma);
             std::cout << ma2 << " " << mb2 << " " << mc2 << std::endl;
         }
-
     }
 }
 
@@ -154,7 +194,6 @@ void calcMinutesAndHours() {
         std::cout << "Целых минут: " << k / 60 << " или целых часов: " << k / 3600 << std::endl;
     else
         std::cout << "Секунда должна быть больше 0" << std::endl;
-
 }
 
 //Task 10
@@ -171,6 +210,40 @@ void isTriangleIsosceles() {
     else
         std::cout << "Треугольник не равнобедренный" << std::endl;
 }
+
+//Task 11
+void gettingPurchasePrice() {
+    int cost;
+    std::cout << "Enter the cost: " << std::endl;
+    std::cin >> cost;
+    if (cost > 1000) {
+        std::cout << "Cost = " << cost / 100 * 90;
+    }
+    else {
+        std::cout << "Cost = " << cost;
+    }
+    std::cout << std::endl;
+}
+
+//Task 12
+void gettingWeightRecommendations() {
+    int height, weight;
+    std::cout << "Enter height and weight: " << std::endl;
+    std::cin >> height >> weight;
+    if (height - 100 > weight) {
+        std::cout << "You need to get better.";
+    }
+    else if (height - 100 < weight) {
+        std::cout << "You need to lose weight.";
+    }
+    else {
+        std::cout << "You have the ideal weight.";
+    }
+    std::cout << std::endl;
+}
+
+//Task 13
+//Надо доделать задачу
 
 //Task 14
 void getNegotiationCost() {
@@ -195,7 +268,57 @@ void getNegotiationCost() {
 
     // Вывод стоимости переговоров
     std::cout << "Стоимость переговоров: " << cost << " рублей" << std::endl;
+}
 
+//Task 15
+void gettingMonthAndSeason() {
+    int month;
+    std::cout << "Enter the month number: " << std::endl;
+    std::cin >> month;
+
+    switch (month)
+    {
+    case 1:
+        std::cout << "January, winter" << "\n";
+        break;
+    case 2:
+        std::cout << "February, winter" << "\n";
+        break;
+    case 3:
+        std::cout << "March, spring" << "\n";
+        break;
+    case 4:
+        std::cout << "April, spring" << "\n";
+        break;
+    case 5:
+        std::cout << "May, spring" << "\n";
+        break;
+    case 6:
+        std::cout << "June, summer" << "\n";
+        break;
+    case 7:
+        std::cout << "July, summer" << "\n";
+        break;
+    case 8:
+        std::cout << "August, summer" << "\n";
+        break;
+    case 9:
+        std::cout << "September, autumn" << "\n";
+        break;
+    case 10:
+        std::cout << "October, autumn" << "\n";
+        break;
+    case 11:
+        std::cout << "November, autumn" << "\n";
+        break;
+    case 12:
+        std::cout << "December, winter" << "\n";
+        break;
+    default:
+        std::cout << "The month is entered incorrectly." << "\n";
+        break;
+    }
+    std::cout << std::endl;
 }
 
 //Task 16
@@ -238,8 +361,6 @@ void isHappyNumber() {
 
 }
 
-
-
 //Task 17.
 void getPennyString() {
     std::cout << "17. Склонение копейки, пример, 11 - Копеек " << std::endl;
@@ -267,7 +388,6 @@ void getPennyString() {
             std::cout << "Копеек" << std::endl;
     }
 }
-
 
 //Task 18
 bool isPalindrome(int number) {
@@ -343,8 +463,6 @@ void numberCheck() {
         std::cout << "Цифры кратны 7, да" << std::endl;
     else
         std::cout << "Цифры не кратны 7, нет" << std::endl;
-
-
 }
 
 //Task 20.
@@ -364,8 +482,6 @@ void rektangelCheck() {
         std::cout << "Можно вписать, да" << std::endl;
     else
         std::cout << "Нельзя вписать, нет" << std::endl;
-
-
 }
 
 //Task 21
@@ -387,17 +503,24 @@ int main()
 {
     setlocale(LC_ALL, "Russian"); //
 
-
+    gettingTrapezoidArea(); //1
+    gettingCircumferenceAndAreaOfCircle(); //2
+    gettingAreaAndHypotenuseOfTriangle(); //3
+    gettingSumOfDigits(); //4
     coordinatesConvertToPolar(); //5
     coordinatesConvertToCartesian(); //6
     findRoots(); //7
     findMedians(); //8      
     calcMinutesAndHours(); //9   
     isTriangleIsosceles(); //10 
+    gettingPurchasePrice(); //11
+    gettingWeightRecommendations(); //12
+    //где 13 задача?
     getNegotiationCost(); //14
+    gettingMonthAndSeason(); //15
     isHappyNumber(); // 16
-    findPalindrome(); //18
-    getPennyString(); //17    
+    getPennyString(); //17  
+    findPalindrome(); //18  
     numberCheck(); //19    
     rektangelCheck(); //20
     printTypeSizes(); //21
