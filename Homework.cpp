@@ -3,44 +3,48 @@
 
 //Task1
 void gettingTrapezoidArea() {
+    std::cout << "1. Расчет площади трапеции. Пример ввода 10,20,3; ответ '45' " << std::endl;
     int b1, b2, h;
-    std::cout << "Enter 2 bases and height: " << std::endl;
+    std::cout << "Введите 2 основания и высоту: " << std::endl;
     std::cin >> b1 >> b2 >> h;
-    std::cout << "square = " << ((b1 + b2) / 2 * h);
+    std::cout << "Площадь равна = " << ((b1 + b2) / 2 * h);
     std::cout << std::endl;
 }
 
 //Task 2
 void gettingCircumferenceAndAreaOfCircle() {
+    std::cout << "2. Расчет длины окружности и площади круга. Пример ввода 1; ответ '6.18, 3.14' " << std::endl;
     int r;
     double p = 3.14;
-    std::cout << "Enter the radius: " << std::endl;
+    std::cout << "Введите радиус: " << std::endl;
     std::cin >> r;
-    std::cout << "Circle length = " << (2 * p * r) << ", " << "Circumference square = " << (p * r * r);
+    std::cout << "Длина окружности = " << (2 * p * r) << ", " << "Площадь круга = " << (p * r * r);
     std::cout << std::endl;
 }
 
 //Task 3
 void gettingAreaAndHypotenuseOfTriangle() {
+    std::cout << "3. Расчет площади прямоугольного треугольника и его гипотенузы. Пример ввода 2,2; ответ '2, 2.82' " << std::endl;
     int a, b;
     double c;
-    std::cout << "Enter the lengths of the cathets: " << std::endl;
+    std::cout << "Введите 2 катета: " << std::endl;
     std::cin >> a >> b;
-    std::cout << "The area of the triangle = " << a * b / 2 << ", " << "Hypotenuse = " << sqrt(pow(a, 2) + pow(b, 2));
+    std::cout << "Площадь треугольника = " << a * b / 2 << ", " << "Гипотенуза = " << sqrt(pow(a, 2) + pow(b, 2));
     std::cout << std::endl;
 }
 
 //Task 4
 void gettingSumOfDigits() {
+    std::cout << "4. Сумма цифр четырехзначного числа. Пример ввода 1111; ответ '4' " << std::endl;
     int chislo, summa;
-    std::cout << "Enter the number: " << std::endl;
+    std::cout << "Введите четырехзначное число: " << std::endl;
     std::cin >> chislo;
     int number1 = chislo / 1000;
     int number2 = chislo % 1000 / 100;
     int number3 = chislo % 100 / 10;
     int number4 = chislo % 10;
     summa = number1 + number2 + number3 + number4;
-    std::cout << "Sum of digits = " << summa;
+    std::cout << "Сумма равна = " << summa;
     std::cout << std::endl;
 }
 
@@ -218,31 +222,33 @@ void isTriangleIsosceles() {
 
 //Task 11
 void gettingPurchasePrice() {
-    int cost;
-    std::cout << "Enter the cost: " << std::endl;
+    std::cout << "11.Нахождение суммы покупки: Тестовый ввод 2000. Ответ 1800 " << std::endl;
+    float cost = 0.0;
+    std::cout << "Введите цену покупки : " << std::endl;
     std::cin >> cost;
     if (cost > 1000) {
-        std::cout << "Cost = " << cost / 100 * 90;
+        std::cout << "Итого (Есть скидка) = " << cost / 100 * 90;
     }
     else {
-        std::cout << "Cost = " << cost;
+        std::cout << "Итого = " << cost;
     }
     std::cout << std::endl;
 }
 
 //Task 12
 void gettingWeightRecommendations() {
+    std::cout << "11.Рекоммендации по весу и росту: Тестовый ввод 170,70. Ответ оптимальный вес " << std::endl;
     int height, weight;
-    std::cout << "Enter height and weight: " << std::endl;
+    std::cout << "Введите вес и высоту: " << std::endl;
     std::cin >> height >> weight;
     if (height - 100 > weight) {
-        std::cout << "You need to get better.";
+        std::cout << "Вам нужно набрать вес.";
     }
     else if (height - 100 < weight) {
-        std::cout << "You need to lose weight.";
+        std::cout << "Вам нужно похудеть";
     }
     else {
-        std::cout << "You have the ideal weight.";
+        std::cout << "У вас оптимальный вес";
     }
     std::cout << std::endl;
 }
@@ -309,50 +315,51 @@ void getNegotiationCost() {
 
 //Task 15
 void gettingMonthAndSeason() {
+    std::cout << "15.Вывод месяца и сезона: Тестовый ввод 2. Ответ февраль, зима " << std::endl;
     int month;
-    std::cout << "Enter the month number: " << std::endl;
+    std::cout << "Введите номер месяца (от 1 до 12): " << std::endl;
     std::cin >> month;
 
     switch (month)
     {
     case 1:
-        std::cout << "January, winter" << "\n";
+        std::cout << "Январь, зима" << "\n";
         break;
     case 2:
-        std::cout << "February, winter" << "\n";
+        std::cout << "Февраль, зима" << "\n";
         break;
     case 3:
-        std::cout << "March, spring" << "\n";
+        std::cout << "Март, весна" << "\n";
         break;
     case 4:
-        std::cout << "April, spring" << "\n";
+        std::cout << "Апрель, весна" << "\n";
         break;
     case 5:
-        std::cout << "May, spring" << "\n";
+        std::cout << "Май, весна" << "\n";
         break;
     case 6:
-        std::cout << "June, summer" << "\n";
+        std::cout << "Июнь, лето" << "\n";
         break;
     case 7:
-        std::cout << "July, summer" << "\n";
+        std::cout << "Июль, лето" << "\n";
         break;
     case 8:
-        std::cout << "August, summer" << "\n";
+        std::cout << "Август, лето" << "\n";
         break;
     case 9:
-        std::cout << "September, autumn" << "\n";
+        std::cout << "Сентябрь, autumn" << "\n";
         break;
     case 10:
-        std::cout << "October, autumn" << "\n";
+        std::cout << "Октябрь, autumn" << "\n";
         break;
     case 11:
-        std::cout << "November, autumn" << "\n";
+        std::cout << "Ноябрь, autumn" << "\n";
         break;
     case 12:
-        std::cout << "December, winter" << "\n";
+        std::cout << "Декабрь, зима" << "\n";
         break;
     default:
-        std::cout << "The month is entered incorrectly." << "\n";
+        std::cout << "Неверный ввод месяца." << "\n";
         break;
     }
     std::cout << std::endl;
