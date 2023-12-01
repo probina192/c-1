@@ -63,6 +63,7 @@ PolarCoordinates convertToPolar(const CartesianCoordinates& cartesian) {
 }
 
 void coordinatesConvertToPolar() {
+    std::cout << "15. Конвертация из декартовых в полярные координаты. Пример ввода 1,1; ответ '1.41, 0.78' " << std::endl;
     CartesianCoordinates cartesian;
     std::cout << "Введите координату X: ";
     std::cin >> cartesian.x;
@@ -85,6 +86,7 @@ CartesianCoordinates convertToCartesian(const PolarCoordinates& polar) {
 }
 
 void coordinatesConvertToCartesian() {
+    std::cout << "15. Конвертация из полярных в декартов координаты. Пример ввода 1,1; ответ '0.54, 0.84' " << std::endl;
     PolarCoordinates polar;
     std::cout << "Введите радиус: ";
     std::cin >> polar.r;
@@ -185,13 +187,16 @@ void findMedians() {
 
 //Task 9
 void calcMinutesAndHours() {
-    std::cout << "9. Расчет перевод секунд в целые минуты или целые часы, пример ввода k = 850, ответ 14 и 0" << std::endl;
+    std::cout << "9. Расчет перевод секунд в целые минуты или целые часы, пример ввода k = 3651, ответ 1 и 1" << std::endl;
     int k = 0;
     std::cout << "Ввведите целочисленную секунду: " << std::endl;
     std::cin >> k;
 
+    int minits = k / 60;
+    int hours = minits / 60;
+    minits -= hours * 60;
     if (k >= 0)
-        std::cout << "Целых минут: " << k / 60 << " или целых часов: " << k / 3600 << std::endl;
+        std::cout << "Целых минут: " << minits << " и целых часов: " << hours << std::endl;
     else
         std::cout << "Секунда должна быть больше 0" << std::endl;
 }
@@ -243,11 +248,11 @@ void gettingWeightRecommendations() {
 }
 
 //Task 13
-#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
 void gettingRandomMultiplication() {
+    std::cout << "13. Генерация рандомного числа и тест, пример генерации 2,3 ввод 6, ответ 'неправильно'" << std::endl;
     // Установка генератора случайных чисел
     std::srand(static_cast<unsigned int>
         (std::time(nullptr)));
@@ -269,15 +274,16 @@ void gettingRandomMultiplication() {
     // Проверка ответа
     if (userAnswer == result) {
         std::cout << "Правильно! Ответ " << result << std::endl;
-    } else {
+    }
+    else {
         std::cout << "Неправильно. Правильный ответ: " << result << std::endl;
     }
 
-    return 0;
 }
 
 //Task 14
 void getNegotiationCost() {
+    std::cout << "14. Расчет стоимости переговоров (стоимость 1 минуты разговора 0.5 рубля). Пример ввода 10,7; ответ '4' " << std::endl;
     // Ввод продолжительности разговора
     int duration;
     std::cout << "Введите продолжительность  в минутах: ";
@@ -354,6 +360,7 @@ void gettingMonthAndSeason() {
 
 //Task 16
 void isHappyNumber() {
+    std::cout << "16. Проверка шестизначного числа на счастливость. Пример ввода 123114; ответ 'да, является' " << std::endl;
     // Ввод шестизначного числа
     int number;
     std::cout << "Введите шестизначное число: ";
@@ -396,7 +403,7 @@ void isHappyNumber() {
 void getPennyString() {
     std::cout << "17. Склонение копейки, пример, 11 - Копеек " << std::endl;
     int penny = 0;
-    std::cout << "Введите число для копейки: " << std::endl;
+    std::cout << "Введите число для копейки: ";
     std::cin >> penny;
 
     if (penny <= 10) {
@@ -439,8 +446,9 @@ bool isPalindrome(int number) {
 }
 
 void findPalindrome() {
-    int number;
+    std::cout << "18. Проверка четерыхзначного числа на палиндром. Пример ввода 2552; ответ 'нет, да' " << std::endl;
 
+    int number;
     std::cout << "Введите четырехзначное число: ";
     std::cin >> number;
 
@@ -491,9 +499,9 @@ void numberCheck() {
     }
 
     if (sum % 7 == 0)
-        std::cout << "Цифры кратны 7, да" << std::endl;
+        std::cout << "Сумма цифр кратна 7, да" << std::endl;
     else
-        std::cout << "Цифры не кратны 7, нет" << std::endl;
+        std::cout << "Сумма цифр не кратна 7, нет" << std::endl;
 }
 
 //Task 20.
@@ -532,7 +540,7 @@ void printTypeSizes() {
 
 int main()
 {
-    setlocale(LC_ALL, "Russian"); //
+    setlocale(LC_ALL, "Russian");
 
     gettingTrapezoidArea(); //1
     gettingCircumferenceAndAreaOfCircle(); //2
@@ -541,18 +549,19 @@ int main()
     coordinatesConvertToPolar(); //5
     coordinatesConvertToCartesian(); //6
     findRoots(); //7
-    findMedians(); //8      
-    calcMinutesAndHours(); //9   
-    isTriangleIsosceles(); //10 
+    findMedians(); //8
+    calcMinutesAndHours(); //9
+    isTriangleIsosceles(); //10
     gettingPurchasePrice(); //11
     gettingWeightRecommendations(); //12
     gettingRandomMultiplication(); //13
     getNegotiationCost(); //14
     gettingMonthAndSeason(); //15
     isHappyNumber(); // 16
-    getPennyString(); //17  
-    findPalindrome(); //18  
-    numberCheck(); //19    
+    getPennyString(); //17
+    findPalindrome(); //18
+    numberCheck(); //19
     rektangelCheck(); //20
     printTypeSizes(); //21
+
 }
